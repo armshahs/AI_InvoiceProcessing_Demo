@@ -1,6 +1,7 @@
 import { el, refreshIcons } from '../utils.js';
 
 const NAV_ITEMS = [
+  { route: 'overview', label: 'Overview', icon: 'map' },
   { route: 'dashboard', label: 'Dashboard', icon: 'layout-dashboard' },
   { route: 'inbox', label: 'Inbox', icon: 'inbox' },
   { route: 'ai-processing', label: 'AI Processing', icon: 'brain' },
@@ -13,15 +14,16 @@ const NAV_ITEMS = [
 ];
 
 const BREADCRUMBS = {
-  dashboard: ['Dashboard'],
-  inbox: ['Dashboard', 'Inbox'],
-  'ai-processing': ['Dashboard', 'Inbox', 'AI Processing'],
-  validation: ['Dashboard', 'Inbox', 'AI Processing', 'Validation'],
-  'maker-review': ['Dashboard', 'Inbox', 'Validation', 'Maker Review'],
-  'checker-approval': ['Dashboard', 'Inbox', 'Maker Review', 'Checker Approval'],
-  'erp-export': ['Dashboard', 'Inbox', 'Checker Approval', 'ERP Export'],
-  'audit-trail': ['Dashboard', 'Audit Trail'],
-  settings: ['Dashboard', 'Settings']
+  overview: ['Overview'],
+  dashboard: ['Overview', 'Dashboard'],
+  inbox: ['Overview', 'Dashboard', 'Inbox'],
+  'ai-processing': ['Overview', 'Dashboard', 'Inbox', 'AI Processing'],
+  validation: ['Overview', 'Dashboard', 'Inbox', 'AI Processing', 'Validation'],
+  'maker-review': ['Overview', 'Dashboard', 'Inbox', 'Validation', 'Maker Review'],
+  'checker-approval': ['Overview', 'Dashboard', 'Inbox', 'Maker Review', 'Checker Approval'],
+  'erp-export': ['Overview', 'Dashboard', 'Inbox', 'Checker Approval', 'ERP Export'],
+  'audit-trail': ['Overview', 'Dashboard', 'Audit Trail'],
+  settings: ['Overview', 'Dashboard', 'Settings']
 };
 
 export function renderSidebar(activeRoute, onNavigate) {

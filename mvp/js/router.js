@@ -11,8 +11,10 @@ import { renderCheckerApproval } from './pages/checker-approval.js';
 import { renderERPExport } from './pages/erp-export.js';
 import { renderAuditTrail } from './pages/audit-trail.js';
 import { renderSettings } from './pages/settings.js';
+import { renderOverview } from './pages/overview.js';
 
 const routes = {
+  overview: () => renderOverview(navigate),
   dashboard: () => renderDashboard(state.dashboardData, state.purchaseOrders, navigate),
   inbox: () => renderInbox(state.purchaseOrders, navigate),
   'ai-processing': () => renderAIProcessing(navigate),
@@ -28,7 +30,7 @@ let currentRoute = 'dashboard';
 let copilotFab = null;
 
 function navigate(route) {
-  if (!routes[route]) route = 'dashboard';
+  if (!routes[route]) route = 'overview';
   currentRoute = route;
   state.setWorkflowStep(route);
   window.location.hash = `#/${route}`;
@@ -36,8 +38,8 @@ function navigate(route) {
 }
 
 function getRouteFromHash() {
-  const hash = window.location.hash.replace('#/', '') || 'dashboard';
-  return routes[hash] ? hash : 'dashboard';
+  const hash = window.location.hash.replace('#/', '') || 'overview';
+  return routes[hash] ? hash : 'overview';
 }
 
 function toggleSidebar() {
