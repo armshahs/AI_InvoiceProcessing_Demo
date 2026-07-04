@@ -1,0 +1,39 @@
+{
+  "metrics": [
+    { "id": "po-today", "label": "Purchase Orders Today", "value": 247, "trend": 12, "trendUp": true, "icon": "file-text", "color": "blue" },
+    { "id": "pending", "label": "Pending Review", "value": 18, "trend": 3, "trendUp": false, "icon": "clock", "color": "amber" },
+    { "id": "approved", "label": "Approved", "value": 162, "trend": 8, "trendUp": true, "icon": "check-circle", "color": "green" },
+    { "id": "rejected", "label": "Rejected", "value": 4, "trend": 1, "trendUp": false, "icon": "x-circle", "color": "red" },
+    { "id": "automation", "label": "Automation Rate", "value": 94, "suffix": "%", "trend": 2, "trendUp": true, "icon": "zap", "color": "purple" },
+    { "id": "avg-time", "label": "Avg Processing Time", "value": 134, "display": "2m 14s", "trend": 5, "trendUp": false, "icon": "timer", "color": "cyan" },
+    { "id": "erp-exports", "label": "ERP Exports", "value": 159, "trend": 15, "trendUp": true, "icon": "database", "color": "blue" },
+    { "id": "exceptions", "label": "Exceptions", "value": 9, "trend": 2, "trendUp": true, "icon": "alert-triangle", "color": "amber" }
+  ],
+  "charts": {
+    "poVolume": {
+      "labels": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+      "data": [32, 45, 38, 52, 48, 18, 14]
+    },
+    "automation": {
+      "labels": ["Week 1", "Week 2", "Week 3", "Week 4"],
+      "data": [88, 91, 93, 94]
+    },
+    "validationErrors": {
+      "labels": ["SKU", "Price", "Date", "Duplicate", "Tax", "Other"],
+      "data": [12, 8, 5, 3, 4, 2]
+    },
+    "customerDistribution": {
+      "labels": ["Nestle", "P&G", "Coca Cola", "Pepsi", "Unilever", "Other"],
+      "data": [28, 22, 18, 15, 10, 7]
+    },
+    "processingTime": {
+      "labels": ["OCR", "Extraction", "Validation", "Review", "Export"],
+      "data": [18, 24, 12, 45, 8]
+    }
+  },
+  "insights": [
+    { "title": "Duplicate POs increased 22%", "description": "Nestle and P&G accounts show higher duplicate submission rates this week.", "type": "warning" },
+    { "title": "Nestle submitted unusually large orders", "description": "3 POs from Nestle exceed 2x their average order value.", "type": "info" },
+    { "title": "3 approvals are waiting", "description": "Checker review queue has 3 items pending for over 4 hours.", "type": "action" }
+  ]
+}

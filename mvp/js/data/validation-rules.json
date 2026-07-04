@@ -1,0 +1,68 @@
+{
+  "rules": [
+    {
+      "id": "customer-exists",
+      "name": "Customer Exists",
+      "description": "Verify customer is registered in master data",
+      "status": "passed",
+      "confidence": 99,
+      "suggestion": null
+    },
+    {
+      "id": "sku-exists",
+      "name": "SKU Exists",
+      "description": "All line item SKUs must exist in product catalog",
+      "status": "warning",
+      "confidence": 72,
+      "suggestion": "Possible match: SKU-45391 (Maggi Noodles 12pk - Regional variant). OCR may have misread last digit."
+    },
+    {
+      "id": "price-valid",
+      "name": "Price Valid",
+      "description": "Unit prices within approved price list tolerance (±5%)",
+      "status": "passed",
+      "confidence": 96,
+      "suggestion": null
+    },
+    {
+      "id": "currency-valid",
+      "name": "Currency Valid",
+      "description": "Currency matches customer account settings",
+      "status": "passed",
+      "confidence": 100,
+      "suggestion": null
+    },
+    {
+      "id": "duplicate-po",
+      "name": "Duplicate PO",
+      "description": "Check for duplicate PO number in last 90 days",
+      "status": "passed",
+      "confidence": 98,
+      "suggestion": null
+    },
+    {
+      "id": "delivery-date",
+      "name": "Delivery Date",
+      "description": "Delivery date must be a business day and within lead time",
+      "status": "warning",
+      "confidence": 85,
+      "suggestion": "July 25, 2026 falls on a company holiday (Summer shutdown). Expected delivery: July 28, 2026."
+    },
+    {
+      "id": "tax-match",
+      "name": "Tax Match",
+      "description": "Tax amount matches calculated rate for ship-to region",
+      "status": "passed",
+      "confidence": 97,
+      "suggestion": null
+    },
+    {
+      "id": "grand-total",
+      "name": "Grand Total Match",
+      "description": "Grand total equals sum of line items plus tax",
+      "status": "passed",
+      "confidence": 99,
+      "suggestion": null
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "prompts": [
+    "Why is this flagged?",
+    "Summarize this PO",
+    "Show validation errors",
+    "Explain confidence score",
+    "Suggest corrections",
+    "Find duplicate orders",
+    "Generate ERP payload summary"
+  ],
+  "responses": {
+    "why-flagged": "PO-24119 has 2 validation warnings:\n\n1. **SKU 45392 not found** — The SKU may be a regional variant. AI suggests SKU-45391 as a possible match (72% confidence).\n\n2. **Delivery date on holiday** — July 25 falls during Nestle's summer shutdown. Recommended date: July 28, 2026.\n\nWould you like me to apply the suggested corrections?",
+    "summarize": "**PO-24119 — Nestle USA Inc.**\n\n- **Order Date:** July 3, 2026\n- **Delivery:** July 25, 2026\n- **Total:** $48,902.40 USD\n- **Line Items:** 4 products (KitKat, Nescafe, Maggi, Purina)\n- **Status:** Pending Maker Review\n- **Confidence:** 96% overall\n\nOne quantity correction pending review on Maggi Noodles line item.",
+    "validation-errors": "Current validation results for PO-24119:\n\n✅ **6 Passed** — Customer, Price, Currency, Duplicate, Tax, Total\n⚠️ **2 Warnings** — SKU Exists, Delivery Date\n❌ **0 Failed**\n\nThe warnings don't block processing but should be reviewed before ERP export.",
+    "confidence": "Overall confidence is **96%**, calculated from:\n\n- Header fields: 98-100%\n- Line items 1-2, 4: 95-98%\n- Line item 3 (Maggi): **72%** — SKU partially obscured in scan\n\nFields below 80% are highlighted for manual review. The low SKU confidence triggered the validation warning.",
+    "suggest-corrections": "Recommended corrections:\n\n1. Change SKU `45392` → `45391` (Maggi regional variant)\n2. Update delivery date to `2026-07-28`\n3. Adjust quantity on line 3: `1200` → `1000` (per customer email)\n\nApplying these would raise confidence to 98%. Shall I prepare these for maker review?",
+    "duplicates": "No exact duplicates found for PO-24119.\n\nHowever, similar orders detected:\n- PO-24105 (Nestle, July 2) — 85% field overlap\n- PO-23890 (Nestle, June 28) — Same product mix\n\nThese appear to be recurring orders, not duplicates.",
+    "erp-summary": "ERP payload ready for SAP:\n\n```\nOrder Type: ZPO\nCustomer: 1000234 (Nestle USA)\nPO Ref: PO-24119\nItems: 4\nNet Value: $45,280.00\nTax: $3,622.40\nTotal: $48,902.40\n```\n\nPayload validated against SAP schema. Ready to push.",
+    "default": "I can help you with this purchase order. Try asking about validation errors, confidence scores, or suggested corrections. I'm context-aware of PO-24119 and the current workflow step."
+  }
+}
